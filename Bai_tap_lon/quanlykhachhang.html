@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Khách Hàng</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #1a2b4c;
+            color: #fff;
+            padding-top: 20px;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #ffffff;
+            padding: 15px;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .sidebar a:hover {
+            background-color: #334166;
+        }
+
+        .sidebar a.active {
+            color: #f5f1f1;
+        }
+
+        .content {
+            margin-left: 240px;
+            padding: 20px;
+            width: calc(100% - 240px);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+
+        .table-container {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        td.status-active {
+            color: green;
+            font-weight: bold;
+        }
+
+        td.status-inactive {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản Lý Bán Hàng</h2>
+        <a href="bangdieukhien.html">Bảng Điều Khiển</a>
+        <a href="quanlysanpham.html">Quản Lý Sản Phẩm</a>
+        <a href="quanlykhachhang.html">Quản Lý Khách Hàng</a>
+        <a href="quanlydonhang.html">Quản Lý Đơn Hàng</a>
+        <a href="baocaodoanhthu.html" class="active">Báo Cáo Doanh Thu</a>
+        <a href="nhanbaocaokhachhang.html">Nhận Báo Cáo Khách Hàng</a>
+        <a href="dangnhapadmin.html">Đăng Xuất</a>
+    </div>
+
+    <div class="content">
+        <h1>Quản Lý Khách Hàng</h1>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm khách hàng...">
+            <button>Tìm kiếm</button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên Khách Hàng</th>
+                        <th>Email</th>
+                        <th>Số Điện Thoại</th>
+                        <th>Trạng Thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#001</td>
+                        <td>Phạm Thị Ngọc</td>
+                        <td>ngoc.pham@example.com</td>
+                        <td>0912345678</td>
+                        <td class="status-active">Hoạt động</td>
+                    </tr>
+                    <tr>
+                        <td>#002</td>
+                        <td>Nguyễn Văn Minh</td>
+                        <td>minh.nguyen@example.com</td>
+                        <td>0987654321</td>
+                        <td class="status-inactive">Không hoạt động</td>
+                    </tr>
+                    <tr>
+                        <td>#003</td>
+                        <td>Trần Thị Mỹ Linh</td>
+                        <td>linh.tran@example.com</td>
+                        <td>0933123456</td>
+                        <td class="status-active">Hoạt động</td>
+                    </tr>
+                    <tr>
+                        <td>#004</td>
+                        <td>Đỗ Hoàng Phúc</td>
+                        <td>phuc.do@example.com</td>
+                        <td>0911223344</td>
+                        <td class="status-inactive">Không hoạt động</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

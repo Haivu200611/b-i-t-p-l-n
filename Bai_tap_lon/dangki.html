@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký</title>
+    <style>
+        body {
+            background-image: url('anhnen.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form {
+            border: 1px solid #000;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: rgb(10, 3, 3);
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .chon {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .chon .trai {
+            width: 80px;
+        }
+
+        .chon input {
+            margin-left: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .btn {
+            color: #fff;
+            background-color: #333;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn2 {
+            color: #fff;
+            background-color: #555;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <h2>Đăng Ký</h2>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="name">Tên</label>
+                <input type="text" id="name" name="name" placeholder="Vui lòng nhập tên..." required>
+                <span class="error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Vui lòng nhập email..." required>
+                <span class="error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="number" id="number" name="number" placeholder="Vui lòng nhập số điện thoại..." required>
+                <span class="error" id="phoneError"></span>
+            </div>
+            <div class="form-group">
+                <label for="gender">Giới tính</label>
+                <div class="chon">
+                    <div class="trai">Nam</div>
+                    <input type="radio" id="gender" name="gender" value="Male">
+                </div>
+                <div class="chon">
+                    <div class="trai">Nữ</div>
+                    <input type="radio" id="gender2" name="gender" value="Female">
+                </div>
+                <div class="chon">
+                    <div class="trai">LGBT</div>
+                    <input type="radio" id="gender3" name="gender" value="Khác">
+                </div>
+                <span class="error" id="genderError"></span>
+            </div>
+            <div class="form-group">
+                <label for="country">Quốc gia:</label>
+                <select id="country" name="country" required>
+                    <option value="">Chọn quốc gia</option>
+                    <option value="VN">Việt Nam</option>
+                    <option value="TQ">Trung Quốc</option>
+                </select>
+                <span class="error" id="countryError"></span>
+            </div>
+            <button type="submit" class="btn"><a href="dangnhap.html">Submit</a></button>
+            <button type="reset" class="btn2">Reset</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .cart {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #333;
+            color: #fff;
+        }
+
+        .total {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .customer-info {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        .customer-info h2 {
+            margin-bottom: 10px;
+        }
+
+        .customer-info label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .customer-info input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .quantity-controls button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart">
+        <h1>Giỏ Hàng</h1>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Sản Phẩm</th>
+                    <th>Giá</th>
+                    <th>Số Lượng</th>
+                    <th>Thành Tiền</th>
+                    <th>Hành Động</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="total">
+            <strong>Tổng Tiền: </strong><span id="total-price">0 VND</span>
+        </div>
+
+        <div class="customer-info">
+            <h2>Thông Tin Khách Hàng</h2>
+            <label for="customer-name">Tên người nhận:</label>
+            <input type="text" id="customer-name" placeholder="Nhập tên người nhận" required>
+            <label for="customer-phone">Số điện thoại:</label>
+            <input type="tel" id="customer-phone" placeholder="Nhập số điện thoại" required>
+            <label for="customer-address">Địa chỉ:</label>
+            <input type="text" id="customer-address" placeholder="Nhập địa chỉ nhận hàng" required>
+        </div>
+
+        <div class="button-container">
+            <button onclick="checkout()">Thanh Toán</button>
+        </div>
+    </div>
+
+    <script>
+        const cartTable = document.querySelector("#cart-table tbody");
+        const totalPrice = document.getElementById("total-price");
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        function renderCart() {
+            cartTable.innerHTML = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.price.toLocaleString()} VND</td>
+                    <td>
+                        <div class="quantity-controls">
+                            <button onclick="decreaseQuantity(${index})">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="increaseQuantity(${index})">+</button>
+                        </div>
+                    </td>
+                    <td>${(item.quantity * item.price).toLocaleString()} VND</td>
+                    <td><button onclick="removeFromCart(${index})">Xóa</button></td>
+                `;
+                cartTable.appendChild(row);
+                total += item.quantity * item.price;
+            });
+
+            totalPrice.textContent = `${total.toLocaleString()} VND`;
+        }
+
+        function increaseQuantity(index) {
+            cart[index].quantity++;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+
+        function decreaseQuantity(index) {
+            if (cart[index].quantity > 1) {
+                cart[index].quantity--;
+                localStorage.setItem("cart", JSON.stringify(cart));
+                renderCart();
+            } else {
+                alert("Số lượng không thể nhỏ hơn 1!");
+            }
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+
+        function checkout() {
+            const customerName = document.getElementById("customer-name").value.trim();
+            const customerPhone = document.getElementById("customer-phone").value.trim();
+            const customerAddress = document.getElementById("customer-address").value.trim();
+
+            if (!customerName || !customerPhone || !customerAddress) {
+                alert("Vui lòng nhập đầy đủ thông tin khách hàng!");
+                return;
+            }
+
+            alert(`Cảm ơn ${customerName}! Đơn hàng của bạn sẽ được giao tới ${customerAddress}.`);
+            localStorage.removeItem("cart");
+            renderCart();
+        }
+
+        renderCart();
+    </script>
+</body>
+</html>

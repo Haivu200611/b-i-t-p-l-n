@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản Phẩm</title>
+    <link rel="stylesheet" href="style.css">  
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+    .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: #333;
+    color: #fff;
+    }
+
+    .logo-image {
+        width: 40px; 
+        height: auto;
+    }
+
+ 
+    .logo {
+        display: flex;
+        align-items: center;
+        margin-right: 15px;
+    }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+    }
+
+    .navbar ul {
+        display: flex;
+        list-style: none;
+    }
+        .featured-products {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .featured-products h2 {
+            margin-bottom: 30px;
+        }
+
+        .product-list {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            background: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .product button {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="logo">
+            <img src="anhlogo.png" alt="Logo" class="logo-image">
+        </a>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Trang Chủ</a></li>
+                    <li><a href="san_pham.html">Sản Phẩm</a></li>
+                    <li><a href="gioi_thieu.html">Giới Thiệu</a></li>
+                    <li><a href="lien_he.html">Liên Hệ</a></li>
+                    <li><a href="dangnhap.html">Đăng Xuất</a></li>
+                </ul>
+            </nav>
+            <a href="gio_hang.html" class="cart-icon">🛒 Giỏ Hàng</a>
+        </div>
+    </header>
+
+    <section class="featured-products">
+        <h2>Sản Phẩm</h2>
+        <div class="product-list">
+            <div class="product">
+                <img src="anhsp1.png" alt="Áo">
+                <h3>Áo Thể Thao</h3>
+                <p>Giá: 500.000 VND</p>
+                <button><a href="chitiet_aothethao.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                <img src="anhsp2.png" alt="Áo">
+                <h3>Áo Mưa</h3>
+                <p>Giá: 600.000 VND</p>
+                <button><a href="chitiet_aomua.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                <img src="anhsp3.png" alt="Áo">
+                <h3>Áo Đại Bàng</h3>
+                <p>Giá: 700.000 VND</p>
+                <button><a href="chitiet_aodaibang.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                <img src="anhsp4.png" alt="Áo">
+                <h3>Áo Khoác Sói</h3>
+                <p>Giá: 1.000.000 VND</p>
+                <button><a href="chitiet_aokhoacsoi.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                    <img src="anhsp5.png" alt="Áo">
+                    <h3>Áo Sơ Mi</h3>
+                    <p>Giá: 4.500.000 VND</p>
+                    <button><a href="chitiet_aosomi.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                    <img src="anhsp6.png" alt="Áo">
+                    <h3>Áo Khoác Gió</h3>
+                    <p>Giá: 700.000 VND</p>
+                    <button><a href="chitiet_aokhoacgio.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="product-list">
+            <div class="product">
+                <img src="anhsp7.png" alt="Áo">
+                <h3>Áo Len</h3>
+                <p>Giá: 650.000 VND</p>
+                <button><a href="chitiet_aolen.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                <img src="anhsp8.png" alt="Áo">
+                <h3>Áo phông</h3>
+                <p>Giá: 150.000 VND</p>
+                <button><a href="chitiet_aophong.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                <img src="anhsp9.png" alt="Áo">
+                <h3>Áo Ba Lỗ</h3>
+                <p>Giá: 99.000 VND</p>
+                <button><a href="chitiet_aobalo.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                <img src="anhsp10.png" alt="Áo">
+                <h3>Áo Dài</h3>
+                <p>Giá: 999.000 VND</p>
+                <button><a href="chitiet_aodai.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                <img src="anhsp11.png" alt="Áo">
+                <h3>Váy Cưới</h3>
+                <p>Giá: 35.000.000 VND</p>
+                <button><a href="chitiet_vaycuoi.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+            <div class="product">
+                <img src="anhsp12.png" alt="Áo">
+                <h3>Vest</h3>
+                <p>Giá: 9.000.000 VND</p>
+                <button><a href="chitiet_aovest.html">Chi Tiết Sản Phẩm</a></button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Cửa hàng xịn, không tỳ vết</p>
+    </footer>
+
+</body>
+</html>

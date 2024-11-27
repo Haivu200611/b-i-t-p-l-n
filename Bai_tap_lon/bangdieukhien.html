@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng Điều Khiển - Quản Lý Sản Phẩm</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #1a2b4c;
+            color: #fff;
+            padding-top: 20px;
+            position: fixed;
+            height: 100vh;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #ffffff;
+            padding: 15px;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .sidebar a:hover {
+            background-color: #334166;
+        }
+
+        .sidebar a.active {
+            color: #eae3e3;
+        }
+
+        .content {
+            margin-left: 240px;
+            padding: 20px;
+            width: calc(100% - 240px);
+        }
+
+        .content h1 {
+            margin-bottom: 20px;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .dashboard-header div {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            text-align: center;
+        }
+
+        .dashboard-header div h3 {
+            margin-bottom: 10px;
+        }
+
+        .dashboard-header div p {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .chart-container {
+            margin-bottom: 30px;
+        }
+
+        .chart-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-box h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .recent-products {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .recent-products h2 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+        }
+
+        table td {
+            background-color: #fff;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Quản Lý Bán Hàng</h2>
+        <a href="bangdieukhien.html">Bảng Điều Khiển</a>
+        <a href="quanlysanpham.html">Quản Lý Sản Phẩm</a>
+        <a href="quanlykhachhang.html">Quản Lý Khách Hàng</a>
+        <a href="quanlydonhang.html">Quản Lý Đơn Hàng</a>
+        <a href="baocaodoanhthu.html">Báo Cáo Doanh Thu</a>
+        <a href="nhanbaocaokhachhang.html">Nhận Báo Cáo Khách Hàng</a>
+        <a href="dangnhapadmin.html">Đăng Xuất</a>
+    </div>
+
+    <div class="content">
+        <h1>Bảng Điều Khiển</h1>
+
+        <div class="dashboard-header">
+            <div>
+                <h3>Tổng Doanh Thu</h3>
+                <p>5,000,000 VND</p>
+            </div>
+            <div>
+                <h3>Số Lượng Sản Phẩm</h3>
+                <p>150</p>
+            </div>
+            <div>
+                <h3>Số Đơn Hàng</h3>
+                <p>85</p>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <div class="chart-box">
+                <h2>Biểu Đồ Doanh Thu</h2>
+                <canvas id="revenueChart" style="height: 300px;"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        const revenueChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6'],
+                datasets: [{
+                    label: 'Doanh Thu (Triệu VND)',
+                    data: [10, 15, 25, 20, 30, 40],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Doanh Thu Hàng Tháng (Demo)'
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Tháng'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Doanh Thu (Triệu VND)'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

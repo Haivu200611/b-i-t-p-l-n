@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập</title>
+    <style>
+        body {
+            background-image: url('anhnen.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; 
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form {
+            border: 1px solid #000;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        .btn {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .btn2 {
+            background: #555;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .btn a,
+        .btn2 a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <h2>Đăng nhập</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Tên tài khoản</label>
+                <input type="text" id="username" name="username" placeholder="Nhập tên..." required>
+                <span class="error" id="usernameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu..." required>
+                <span class="error" id="passwordError"></span>
+            </div>
+            <button type="submit" class="btn">
+                <a href="home.html">Login</a>
+            </button>
+            <button type="reset" class="btn2">Reset</button>
+            <button type="submit" class="btn">
+                <a href="dangki.html">Tạo tài khoản</a>
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            background: #333;
+            color: #fff;
+        }
+
+        .logo-image {
+            width: 40px; 
+            height: auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .introduction {
+            padding: 50px 20px;
+            text-align: center;
+        }
+    
+        .introduction h2 {
+            margin-bottom: 20px;
+        }
+    
+        .team {
+            margin-top: 30px;
+        }
+    
+        .team-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    
+        .team-member {
+            width: 250px;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+    
+        .team-member h4 {
+            margin: 5px 0;
+        }
+    
+        .team-member p {
+            font-size: 0.9em;
+        }
+    </style>    
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="home.html" class="logo">
+            <img src="anhlogo.png" alt="Logo" class="logo-image">
+        </a>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Trang Chủ</a></li>
+                    <li><a href="san_pham.html">Sản Phẩm</a></li>
+                    <li><a href="gioi_thieu.html">Giới Thiệu</a></li>
+                    <li><a href="lien_he.html">Liên Hệ</a></li>
+                    <li><a href="dangnhap.html" class="logout">Đăng Xuất</a></li>
+                </ul>
+            </nav>
+            <a href="gio_hang.html" class="cart-icon">🛒 Giỏ Hàng</a>
+        </div>
+    </header>
+
+    <section class="introduction">
+        <h2>Giới Thiệu</h2>
+        <p>Chào mừng đến với cửa hàng của chúng tôi! Chúng tôi cung cấp các sản phẩm chất lượng và giá cả hợp lý nhằm mang lại trải nghiệm tốt nhất cho khách hàng.</p>
+        <div class="team">
+            <h3>Thành Viên</h3>
+            <div class="team-list">
+                <div class="team-member">
+                    <img src="" alt="Nguyễn Hải Vũ">
+                    <h4>Nguyễn Hải Vũ</h4>
+                    <p>Chức vụ: Trưởng Nhóm</p>
+                    <p>SDT: 0338440082</p>
+                    <p>Email: haivu200611@gmail.com</p>
+                    <p>MSV: 1871020663</p>
+                </div>
+                <div class="team-member">
+                    <img src="" alt="Trương Quốc Thái">
+                    <h4>Trương Quốc Thái</h4>
+                    <p>Chức vụ: Thành Viên</p>
+                    <p>SDT: 0704170120</p>
+                    <p>Email: truongquocthai0610@gmail.com</p>
+                    <p>MSV:1871020525</p>
+                </div>
+                <div class="team-member">
+                    <img src="" alt="Nghiêm Trường Giang">
+                    <h4>Nghiêm Trường Giang</h4>
+                    <p>Chức vụ: Thành Viên</p>
+                    <p>SDT: 0973467391</p>
+                    <p>Email: giangtruongnghiem2006@gmail.com</p>
+                    <p>MSV: 1871020201</p>
+                </div>
+                <div class="team-member">
+                    <img src="" alt="Phạm Duy Lam">
+                    <h4>Phạm Duy Lam</h4>
+                    <p>Chức vụ: Thành Viên</p>
+                    <p>SDT: 0327258133</p>
+                    <p>Email: lam0971055930@gmail.com</p>
+                    <p>MSV: 1871090065</p>
+                </div>
+                <div class="team-member">
+                    <img src="" alt="Nguyễn Văn Hiếu">
+                    <h4>Nguyễn Văn Hiếu</h4>
+                    <p>Chức vụ: Thành Viên</p>
+                    <p>SDT: 0963866500</p>
+                    <p>Email: hieuchaybo@gmail.com</p>
+                    <p>MSV: 1871020226</p>        
+            </div>
+        </div>
+    </section>    
+</body>
+</html>
